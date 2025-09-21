@@ -1,0 +1,274 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOUkayAFgsFJq1GC1DcKu1x",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/thiagoti2025/Cartilhas-Python/blob/main/un_2_aula_3.ipynb%20classe%20pai%20e%20classe%20filho\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "07eJLXnpl_5G",
+        "outputId": "7bfcfcb6-5b89-4b7a-8aa9-7f9c9e19288c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Olá, meu nome é João!\n",
+            "Minha idade é: 30\n",
+            "Minha nova idade é: 31\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Define uma classe chamada Pessoa.\n",
+        "class Pessoa:\n",
+        "  # o método __init__é um construtor, chamado quando um objeto da classe é criado.\n",
+        "  # Ele inicializa os atributos da classe.\n",
+        "  def __init__(self, nome, idade, genero):\n",
+        "      # self é uma convenção em Python que se refere à própria instância da classe.\n",
+        "      # os parâmetros nome, idade e gênero são passados durante a criação do objeto.\n",
+        "      # Eles são usados para inicializar os atributos da instância.\n",
+        "      self.nome = nome # Atribui o valor de nome ao atribui o valor de nime ao atributo nome da instância.\n",
+        "      self.idade = idade # Atribui o valor de idade ao atributo idade da instância.\n",
+        "      self.genero = genero # Atribui o valor de gênero ao atributo gênero da instância.\n",
+        "  # o método cumprimentar retorna uma saudação com o nome da pessoa.\n",
+        "  def cumprimentar(self):\n",
+        "    return f\"Olá, meu nome é {self.nome}!\"\n",
+        "  # o método aniversário aumenta a idade da pessoa em 1.\n",
+        "  def aniversario(self):\n",
+        "    self.idade += 1\n",
+        "# Cria uma instância da classe \"Pessoa\" com os valores \"João\", 30 e \"Masculino\" para nome, idade e gênero, respectivamente.\n",
+        "pessoa1 = Pessoa(\"João\", 30, \"Masculino\")\n",
+        "# Imprime a saudação gerada pelo método cumprimentar da instância \"pessoa\".\n",
+        "print(pessoa1.cumprimentar()) # Saída; \"Olá, meu é: João\"\n",
+        "# acessa o atributo idade da instância pessoa1 e imprime sua idade.\n",
+        "print(f\"Minha idade é: {pessoa1.idade}\") # Saída: \"Minha idade é: 30\"\n",
+        "# Chama o método \"aniversario\" na instãncia pessoa1 para aumentar sua idade em 1.\n",
+        "pessoa1.aniversario()\n",
+        "# Imprime a nova idade da pessoa após o aniversário.\n",
+        "print(f\"Minha nova idade é: {pessoa1.idade}\") # Saída: \"Minha nova idade é: 31\"\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "bNSkOlGvwwf9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Classe Pai(Superclasse)\n",
+        "class Animal:\n",
+        "    def __init__(self, nome ):\n",
+        "      self.nome = nome\n",
+        "    def emitir_som(self):\n",
+        "      pass\n",
+        "  # Classe filha (subclasse)\n",
+        "class Cachorro(Animal):\n",
+        "    def emitir_som(self):\n",
+        "      return \"Au au!\"\n",
+        "  # Classe filha (subclasse)\n",
+        "class Gato(Animal):\n",
+        "    def emitir_som(self):\n",
+        "      return \"Miau!\"\n"
+      ],
+      "metadata": {
+        "id": "3nnEalIfwy5O"
+      },
+      "execution_count": 20,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rex = Cachorro(\"Rex\")\n",
+        "whiskers = Gato(\"Whiskers\")"
+      ],
+      "metadata": {
+        "id": "7gRyRsHI4MWB"
+      },
+      "execution_count": 21,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(f\"{rex.nome} faz: {rex.emitir_som()}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Njfeo7NM4cDp",
+        "outputId": "03054850-be8a-4c9f-eac3-73a10fd9ac70"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Rex faz: Au au!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(f\"{whiskers.nome} faz: {whiskers.emitir_som()}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j4CZlGGe67Fj",
+        "outputId": "90916976-94c4-423a-dbd8-40a439d9c798"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Whiskers faz: Miau!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "fp6d7Mac7g6w"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class veículo:\n",
+        "  def __init__(self, marca, modelo, ano): # Removed velocidade from __init__ as it's initialized to 0\n",
+        "    self.marca = marca\n",
+        "    self.modelo = modelo\n",
+        "    self.ano = ano\n",
+        "    self.velocidade = 0 # Initialize velocidade to 0\n",
+        "\n",
+        "  def acelerar(self, valor):\n",
+        "    self.velocidade += valor\n",
+        "\n",
+        "  def frear(self, valor):\n",
+        "    self.velocidade -= valor\n",
+        "\n",
+        "  def status(self):\n",
+        "    return f\"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Velocidade: {self.velocidade} km/h\"\n",
+        "\n",
+        "class Carro(veículo):\n",
+        "  def __init__(self, marca, modelo, ano, potencia):\n",
+        "    super().__init__(marca, modelo, ano) # Call superclass __init__ with correct arguments\n",
+        "    self.potencia = potencia\n",
+        "\n",
+        "  def acelerar(self, valor):\n",
+        "    self.velocidade += valor + self.potencia\n",
+        "\n",
+        "\n",
+        "class Bicicleta(veículo):\n",
+        "  def __init__(self, marca, modelo, ano, tipo):\n",
+        "    super().__init__(marca, modelo, ano) # Call superclass __init__ with correct arguments\n",
+        "    self.tipo = tipo\n",
+        "    # Bicicleta doesn't need an explicit velocidade initialization here as it's done in the superclass\n",
+        "\n",
+        "  def status(self):\n",
+        "    return f\"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Tipo: {self.tipo}, Velocidade: {self.velocidade} km/h\"\n",
+        "\n",
+        "# Criando objetos\n",
+        "carro1 = Carro(\"Toyota\", \"Corolla\", 2022, 150)\n",
+        "bicicleta1 = Bicicleta(\"trek\", \"mountain bike\", 2021, \"mtb\")\n",
+        "\n",
+        "# Acelerando e verificando o status\n",
+        "carro1.acelerar(50)\n",
+        "bicicleta1.acelerar(20)\n",
+        "\n",
+        "# Exibindo o status dos veículos\n",
+        "print(\"Status do Carro:\")\n",
+        "print(carro1.status())\n",
+        "\n",
+        "print(\"\\nStatus da Bicicleta:\")\n",
+        "print(bicicleta1.status())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ntUClX3v7wtw",
+        "outputId": "cc869fdf-0b84-454d-af6c-6b287baf038c"
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Status do Carro:\n",
+            "Marca: Toyota, Modelo: Corolla, Ano: 2022, Velocidade: 200 km/h\n",
+            "\n",
+            "Status da Bicicleta:\n",
+            "Marca: trek, Modelo: mountain bike, Ano: 2021, Tipo: mtb, Velocidade: 20 km/h\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "gCmM2E-KEAYY"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
